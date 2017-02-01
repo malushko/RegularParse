@@ -9,15 +9,10 @@ var addresses = require('./addresses');
         while (match = regular.exec(addresses[i])){
             arrayMatch.push(match[0]);
         }
-        if(arrayMatch.length == 2){
-            regularObject.street = arrayMatch[0];
-            regularObject.house = arrayMatch[1];
-        }
-        else if(arrayMatch.length == 3){
             regularObject.street = arrayMatch[0];
             regularObject.house = arrayMatch[1];
             regularObject.flat = arrayMatch[2];
-        }
+
         let jsonRegularObject = JSON.stringify(regularObject);
         arrayObjectParse.push(jsonRegularObject);
     }
