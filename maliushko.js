@@ -1,12 +1,9 @@
 
 var addresses = require('./addresses');
-
-    var regular = /\d[0-9-а-яА-Яё]{1,30}\s?[А-Яа-яё]+|([А-Я][ёА-Яа-я-\s]{1,50})|\d+/g;
-    var regularObject = {};
-
-    var arrayObjectParse = [];
+    let regular = /\d[0-9-а-яА-Яё]{1,30}\s?[А-Яа-яё]+|([А-Я][ёА-Яа-я-\s]{1,50})|\d+/g;
+    let arrayObjectParse = [];
     for(var i = 0; i < addresses.length; i++){
-        let arrayMatch = [];
+        let regularObject = {};
         while (match = regular.exec(addresses[i])){
             arrayMatch.push(match[0]);
         }
