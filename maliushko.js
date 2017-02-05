@@ -5,15 +5,13 @@ var addresses = require('./addresses');
     let arrayObjectParse = [];
     for(var i = 0; i < addresses.length; i++){
         let arrayMatch = [];
-        let regularObject = {};
         while (match = regular.exec(addresses[i])){
             arrayMatch.push(match[0]);
         }
-            regularObject.street = arrayMatch[0];
-            regularObject.house = arrayMatch[1];
-            regularObject.flat = arrayMatch[2];
 
-        let jsonRegularObject = JSON.stringify(regularObject);
+
+        let jsonRegularObject = JSON.stringify({street: arrayMatch[0], house: arrayMatch[1], flags: arrayMatch[2]});
+        jsonRegularObject = JSON.parse(jsonRegularObject);
         arrayObjectParse.push(jsonRegularObject);
     }
 console.log(arrayObjectParse);
